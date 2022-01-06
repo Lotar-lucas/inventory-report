@@ -19,4 +19,5 @@ class SimpleReport:
             + min(validity)
             + "\nEmpresa com maior quantidade de produtos estocados: "
             + statistics.mode(company)
+            + '\n'
         )
