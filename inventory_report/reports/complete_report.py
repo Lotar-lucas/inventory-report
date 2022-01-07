@@ -27,4 +27,5 @@ class CompleteReport(SimpleReport):
             + statistics.mode(companies)
             + "\n\nProdutos estocados por empresa:\n"
             + stock
+            + '\n'
         )
