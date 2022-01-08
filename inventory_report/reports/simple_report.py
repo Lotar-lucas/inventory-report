@@ -3,7 +3,9 @@ import statistics
 
 
 class SimpleReport:
-    def generate(data):
+    response = ""
+
+    def generate(self, data):
         today = datetime.today().strftime("%Y-%m-%d")
         dates = [date["data_de_fabricacao"] for date in data]
         validity = [
@@ -12,12 +14,13 @@ class SimpleReport:
             if date["data_de_validade"] >= today
         ]
         company = [date["nome_da_empresa"] for date in data]
-        return (
+        res = (
             "Data de fabricação mais antiga: "
             + min(dates)
             + "\nData de validade mais próxima: "
             + min(validity)
             + "\nEmpresa com maior quantidade de produtos estocados: "
             + statistics.mode(company)
-            + '\n'
         )
+        self.response = res
+        return res
