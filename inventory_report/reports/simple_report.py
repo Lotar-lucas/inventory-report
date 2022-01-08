@@ -3,9 +3,7 @@ import statistics
 
 
 class SimpleReport:
-    response = ""
-
-    def generate(self, data):
+    def generate(data):
         today = datetime.today().strftime("%Y-%m-%d")
         dates = [date["data_de_fabricacao"] for date in data]
         validity = [
@@ -21,6 +19,6 @@ class SimpleReport:
             + min(validity)
             + "\nEmpresa com maior quantidade de produtos estocados: "
             + statistics.mode(company)
+            + "\n"
         )
-        self.response = res
         return res
