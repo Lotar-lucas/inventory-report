@@ -1,4 +1,5 @@
-from ..reports import simple_report, complete_report
+from inventory_report.reports.simple_report import SimpleReport
+from inventory_report.reports.complete_report import CompleteReport
 import csv
 
 
@@ -9,7 +10,7 @@ class Inventory():
             data = list(csv.DictReader(csv_file, delimiter=','))
 
         switch = {
-            "simple_report": simple_report,
-            "complete_report": complete_report,
+            "simple_report": SimpleReport,
+            "complete_report": CompleteReport,
         }
         return switch[type](data)
