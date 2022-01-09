@@ -3,8 +3,8 @@ from inventory_report.reports.complete_report import CompleteReport
 import csv
 
 
-class Inventory():
-
+class Inventory:
+    @staticmethod
     def import_data(path, type):
         with open(path, mode='r') as csv_file:
             data = list(csv.DictReader(csv_file, delimiter=','))
