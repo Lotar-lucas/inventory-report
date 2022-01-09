@@ -19,5 +19,5 @@ class XmlImporter(Importer):
             out.append(temp)
         return out
 
-    def import_data(path, type):
+    def import_data(path):
         return XmlImporter.readType(path)

@@ -13,5 +13,5 @@ class CsvImporter(Importer):
             out = list(csv.DictReader(csv_file, delimiter=","))
         return out
 
-    def import_data(path, type):
+    def import_data(path):
         return CsvImporter.readType(path)
