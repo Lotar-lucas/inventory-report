@@ -14,5 +14,5 @@ class JsonImporter(Importer):
             out = json.loads(jsonFile)
         return out
 
-    def import_data(path, type):
+    def import_data(path):
         return JsonImporter.readType(path)
