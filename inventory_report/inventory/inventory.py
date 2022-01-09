@@ -4,12 +4,12 @@ import csv
 
 
 class Inventory:
-    @staticmethod
+
     def import_data(path, type):
         with open(path, mode='r') as csv_file:
             data = list(csv.DictReader(csv_file, delimiter=','))
         switch = {
-            "simple_report": SimpleReport,
-            "complete_report": CompleteReport,
+            "simples": SimpleReport,
+            "completo": CompleteReport,
         }
         return switch[type].generate(data)
