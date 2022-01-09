@@ -1,8 +1,5 @@
 import csv
 from inventory_report.importer.importer import Importer
-from inventory_report.reports.complete_report import CompleteReport
-
-from inventory_report.reports.simple_report import SimpleReport
 
 
 class CsvImporter(Importer):
@@ -17,9 +14,4 @@ class CsvImporter(Importer):
         return out
 
     def import_data(path, type):
-        data = CsvImporter.readType(path)
-        switch = {
-            "simples": SimpleReport,
-            "completo": CompleteReport,
-        }
-        return switch[type].generate(data)
+        return CsvImporter.readType(path)

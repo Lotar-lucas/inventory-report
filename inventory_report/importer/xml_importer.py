@@ -1,8 +1,5 @@
 import xml.etree.ElementTree as xml
 from inventory_report.importer.importer import Importer
-from inventory_report.reports.complete_report import CompleteReport
-
-from inventory_report.reports.simple_report import SimpleReport
 
 
 class XmlImporter(Importer):
@@ -23,9 +20,4 @@ class XmlImporter(Importer):
         return out
 
     def import_data(path, type):
-        data = XmlImporter.readType(path)
-        switch = {
-            "simples": SimpleReport,
-            "completo": CompleteReport,
-        }
-        return switch[type].generate(data)
+        return XmlImporter.readType(path)

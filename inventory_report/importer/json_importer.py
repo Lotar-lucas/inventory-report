@@ -1,8 +1,5 @@
 import json
 from inventory_report.importer.importer import Importer
-from inventory_report.reports.complete_report import CompleteReport
-
-from inventory_report.reports.simple_report import SimpleReport
 
 
 class JsonImporter(Importer):
@@ -18,9 +15,4 @@ class JsonImporter(Importer):
         return out
 
     def import_data(path, type):
-        data = JsonImporter.readType(path)
-        switch = {
-            "simples": SimpleReport,
-            "completo": CompleteReport,
-        }
-        return switch[type].generate(data)
+        return JsonImporter.readType(path)
