@@ -8,9 +8,8 @@ class Inventory():
     def import_data(path, type):
         with open(path, mode='r') as csv_file:
             data = list(csv.DictReader(csv_file, delimiter=','))
-
         switch = {
             "simple_report": SimpleReport,
             "complete_report": CompleteReport,
         }
-        return switch[type](data)
+        return switch[type].generate(data)
