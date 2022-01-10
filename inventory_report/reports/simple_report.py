@@ -12,6 +12,7 @@ class SimpleReport:
             if date["data_de_validade"] >= today
         ]
         company = [date["nome_da_empresa"] for date in data]
+        # test
         res = (
             "Data de fabricação mais antiga: "
             + min(dates)
